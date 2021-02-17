@@ -1,2 +1,2 @@
-# megaD
-Deep learning for metagenomic sample classification
+# MegaDL
+Deep learning for metagenomic sample classification and phenotype prediction
