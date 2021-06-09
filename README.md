@@ -62,4 +62,4 @@ This field is getting a floating number to remove profiles and their abundances 
 
 
 #### Normalization ####
-There is a choice for normalizing the data. Normalization is achieved using the cumulative sum scaling method. 
+There is a choice for normalizing the data. Normalization is achieved using the cumulative sum scaling (CSS) method. 
