@@ -37,18 +37,32 @@ With Kraken2 installed, follow the instructions at https://github.com/DerrickWoo
 ### Training the Model ###
 
 To train the model, first download this github repository to your local device using git clone or similar command.
+
 Next, navigate to the scripts folder in a command line environment, then run the following python script:
+
 ```python DNN.py ../Data/Cirrhosis.csv ../Data/CirrhosisMetaData.csv gridsearch=False threshold=0 normalize=False feature_level=All learning_rate=0.00001 epochs=10 batch=50 dropout_rate=0 early_stop=10```
+
 This will generate a model using default parameters and using the Cirrhosis training data. The model will be saved as Cirrhosis.pt for use with prediction.
+
 There are several optional parameters that can be used to fine tune the model, they are described below:
+
 The GridSearch parameters can be used to leverage randomized grid search for hyperparameter optimization of the model.
+
 The threshold parameter is used to prune the data of abundances that fall below the threshold, which tends to increase the accuracy of the model.
+
 The normalization parameter executes data normalization when set to true.
+
 The feature level parameter determines which taxonomic levels to use for classification. Options are: 'All', 'Species', and 'Genus'
+
 The learning rate parameter sets the learning rate of the neural network, the optimal learning rate will vary depending on the dataset used.
-The epochs parameter determines for how many iterations of the data the neural network will be trained on. Longer epochs will increase run-time and increase risk of overfitting.
+
+The epochs parameter determines for how many iterations of the data the neural network will be trained on. Longer epochs will increase run-time and increase risk of 
+overfitting.
+
 The batch parameter sets what batch size to use for training the network.
+
 The dropout rate determines the frequency at which the model will reset weights to help prevent overfitting.
+
 The early stop feature is used only if grid search is set to true, and adds a limit for how many iteration of grid search are done without improvement before training is stopped.
 
 
