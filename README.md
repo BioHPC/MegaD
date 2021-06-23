@@ -36,21 +36,29 @@ With Kraken2 installed, follow the instructions at https://github.com/DerrickWoo
 
 ### Training the Model ###
 
-To train the model, run the following command:
-```model = RunAnalysis(GridSearch = True, Threshold = 0.05, Normalize = True, level = 'All')```
-The GridSearch parameters can be used to levrage randomized grid search for hyperparameter optimization of the model.
+To train the model, first download this github repository to your local device using git clone or similar command.
+Next, navigate to the scripts folder in a command line environment, then run the following python script:
+```python DNN.py ../Data/Cirrhosis.csv ../Data/CirrhosisMetaData.csv gridsearch=False threshold=0 normalize=False feature_level=All learning_rate=0.00001 epochs=10 batch=50 dropout_rate=0 early_stop=10```
+This will generate a model using default parameters and using the Cirrhosis training data. The model will be saved as Cirrhosis.pt for use with prediction.
+There are several optional parameters that can be used to fine tune the model, they are described below:
+The GridSearch parameters can be used to leverage randomized grid search for hyperparameter optimization of the model.
 The threshold parameter is used to prune the data of abundances that fall below the threshold, which tends to increase the accuracy of the model.
 The normalization parameter executes data normalization when set to true.
-The level parameter determines which taxonomic levels to use for classification. Options are: 'All', 'Species', and 'Genus'
+The feature level parameter determines which taxonomic levels to use for classification. Options are: 'All', 'Species', and 'Genus'
+The learning rate parameter sets the learning rate of the neural network, the optimal learning rate will vary depending on the dataset used.
+The epochs parameter determines for how many iterations of the data the neural network will be trained on. Longer epochs will increase run-time and increase risk of overfitting.
+The batch parameter sets what batch size to use for training the network.
+The dropout rate determines the frequency at which the model will reset weights to help prevent overfitting.
+The early stop feature is used only if grid search is set to true, and adds a limit for how many iteration of grid search are done without improvement before training is stopped.
 
-After entering the command, you will be prompted to enter the file names of your training data and metadata file.
+
 
 ### Prediction with trained model ###
 
 To predict an unknown profile using a trained model, run the following command.
-```model.predict('testing_data.csv')```
+```python predict.py Cirrhosis.pt Cirrhosistest.csv```
 
-This will return a prediction based on the trained model used. MegaDL provides a set of pretrained models for quick analysis. 
+This will return a prediction based on the trained model used. MegaDL provides a set of pretrained models for quick analysis of several datasets. 
 
 #### Criteria for feature selection ####
 **Genus Level** and **Species Level** tabs return genus and species level from the dataset as the feature. **All Level** tab tracks back the taxon level for unclassified higher order.  
