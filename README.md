@@ -79,9 +79,24 @@ This will return a prediction based on the trained model used. MegaDL provides a
 
 
 #### Threshold ####
-This field is getting a floating number to remove profiles and their abundances below the threshold value. Default value is **0**. 
+This field is getting a floating number to remove profiles and their abundances below the threshold value. Default value is **0**. Increasing this threshold can increase prediction accuracy by filtering out irrelevant taxonomies.
 
 
 
 #### Normalization ####
 There is a choice for normalizing the data. Normalization is achieved using the cumulative sum scaling (CSS) method. 
+
+#### Gridsearch ####
+This option repeatedly trains models using different parameters each time in order to determine the parameters that provide the highest prediction accuracy for each dataset. The grid search will stop once the number of runs without an accuracy improvement matches the value of the **Early stop** parameter.
+
+#### Early Stop ####
+Early stop defines how many epochs without improvement will occur before the gridsearch is stopped and a trained model is returned.
+
+#### Dropout Rate ####
+Drop out is the random resetting of weights during training, which can aid in reducing overfitting of the neural network.
+
+#### Learning Rate ####
+This parameter sets the learning rate to be used during the training process.
+
+#### Epochs ####
+This parameter defines how many training cycles are completed dueing the training process.
