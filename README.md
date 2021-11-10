@@ -1,6 +1,6 @@
-# MegaDL: A python based machine learning software for metagenomic analysis to identify and predict disease sample accurately using deep neural networks.
+# MegaD: A python based machine learning software for metagenomic analysis to identify and predict disease sample accurately using deep neural networks.
   
-Machine learning has been utilized in many applications from biomedical imaging to business analytics. Machine learning is stipulated to be a strong method for diagnostics and even for determining therapeutics in future as we move to precision medicine. MegaDL provides an unprecedented opportunity to develop neural networks from metagenomic data available publicly as well as to perform classification of data samples based on the optimal model we developed. 
+Machine learning has been utilized in many applications from biomedical imaging to business analytics. Machine learning is stipulated to be a strong method for diagnostics and even for determining therapeutics in future as we move to precision medicine. MegaD provides an unprecedented opportunity to develop neural networks from metagenomic data available publicly as well as to perform classification of data samples based on the optimal model we developed. 
 
 The description below walks you through the analysis of the ___ project (https://pubs.broadinstitute.org/diabimmune)
 
@@ -19,7 +19,7 @@ The general workflow is described in below.
 * Metagenomics data in BIOM or OTU format with accompanying metadata file.
 	* Use Kraken 2 http://ccb.jhu.edu/software/kraken2/ for taxonomic classification of sequences.
 
-## Installing MegaDL:
+## Installing MegaD:
 
 
 ## Getting Started
@@ -28,8 +28,8 @@ The general workflow is described in below.
 
 ### Data Input ###
 
-MegaDL can take both OTU table and BIOM file from popular metagenomic profiling tools, [Kraken2](http://ccb.jhu.edu/software/kraken2/) and [qiime](https://qiime2.org/).
-MegaDL provides a set of pre-processed datasets for use in training. 
+MegaD can take both OTU table and BIOM file from popular metagenomic profiling tools, [Kraken2](http://ccb.jhu.edu/software/kraken2/) and [qiime](https://qiime2.org/).
+MegaD provides a set of pre-processed datasets for use in training. 
 
 With Kraken2 installed, follow the instructions at https://github.com/DerrickWood/kraken2/wiki/Manual to generate a taxonomic profile of your 16S or WGS data.
 
@@ -72,7 +72,7 @@ The early stop feature is used only if grid search is set to true, and adds a li
 To predict an unknown profile using a trained model, run the following command.
 ```python predict.py Cirrhosis.pt Cirrhosistest.csv```
 
-This will return a prediction based on the trained model used. MegaDL provides a set of pretrained models for quick analysis of several datasets. 
+This will return a prediction based on the trained model used. MegaD provides a set of pretrained models for quick analysis of several datasets. 
 
 #### Criteria for feature selection ####
 **Genus Level** and **Species Level** tabs return genus and species level from the dataset as the feature. **All Level** tab tracks back the taxon level for unclassified higher order.  
