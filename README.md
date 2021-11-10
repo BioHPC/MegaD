@@ -1,4 +1,4 @@
-# MegaD: A python based machine learning software for metagenomic analysis to identify and predict disease sample accurately using deep neural networks.
+# MegaD: A package for metagenomic analysis to identify and predict disease sample accurately using deep neural networks.
   
 Machine learning has been utilized in many applications from biomedical imaging to business analytics. Machine learning is stipulated to be a strong method for diagnostics and even for determining therapeutics in future as we move to precision medicine. MegaD provides an unprecedented opportunity to develop neural networks from metagenomic data available publicly as well as to perform classification of data samples based on the optimal model we developed. 
 
