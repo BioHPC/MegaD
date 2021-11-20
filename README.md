@@ -123,7 +123,7 @@ This parameter defines how many training cycles are completed dueing the trainin
 
 For this example, we will demonstrate and example usage of our model using the purina dataset to obtain the best results possible. 
 
-###Training ###
+### Training ###
 
 First, we will train the model on the Purina.csv dataset using the following command:
 ```
@@ -139,7 +139,7 @@ This will generate the following:
 * An ROC curve that can be saved for future use
 * A prinout of training accuracy, validation accuracy, testing accuracy, and testing AUC in the console
 
-###Prediction ###
+### Prediction ###
 
 In order to sample MegaD's ability to predict disease status from taxonomic profile, we will run the prediction using the same Purina.csv dataset.
 
