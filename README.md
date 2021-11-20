@@ -20,7 +20,27 @@ The general workflow is described in below.
 	* Use Kraken 2 http://ccb.jhu.edu/software/kraken2/ for taxonomic classification of sequences.
 
 ## Installing MegaD:
+Before using our tool, there are several python packages required. These can be installed using the following commands:
+```
+>pip install torch==1.10.0+cu102 torchvision==0.11.1+cu102 torchaudio===0.10.0+cu102 -f https://download.pytorch.org/whl/cu102/torch_stable.html
+>pip install sklearn
+>pip install tensorflow
+>pip install torchvision
+>pip install matplotlib
+>pip install nump
+>pip install pandas
+```
+Once these packages are installed, continue onto the next step to install our tool.
 
+Installing MegaD is simple. There are two options for installing our software tool. 
+
+####[1] Gitclone installation:
+For this installation, simply clone this repository into your location of choice using the following command:
+```
+>git clone https://github.com/BioHPC/MegaD.git
+```
+####[2] Manual installation:
+Download the .zip file from the github page in the top right, then extract the contents of the file into your directory of choice.
 
 ## Getting Started
 
@@ -36,13 +56,11 @@ With Kraken2 installed, follow the instructions at https://github.com/DerrickWoo
 
 ### Training the Model ###
 
-To train the model, first download this github repository to your local device using git clone or similar command.
+To train the model, navigate to the scripts folder in a command line environment, then run the following python script:
 
-Next, navigate to the scripts folder in a command line environment, then run the following python script:
+```python DNN.py ../Data/dataset.csv ../Data/metadata.csv gridsearch=False threshold=0 normalize=False feature_level=All learning_rate=0.00001 epochs=10 batch=50 dropout_rate=0 early_stop=10```
 
-```python DNN.py ../Data/Cirrhosis.csv ../Data/CirrhosisMetaData.csv gridsearch=False threshold=0 normalize=False feature_level=All learning_rate=0.00001 epochs=10 batch=50 dropout_rate=0 early_stop=10```
-
-This will generate a model using default parameters and using the Cirrhosis training data. The model will be saved as Cirrhosis.pt for use with prediction.
+This will generate a model using default parameters and using the selected training dataset. The model will be saved as dataset.pt for use with prediction.
 
 There are several optional parameters that can be used to fine tune the model, they are described below:
 
@@ -70,7 +88,7 @@ The early stop feature is used only if grid search is set to true, and adds a li
 ### Prediction with trained model ###
 
 To predict an unknown profile using a trained model, run the following command.
-```python predict.py Cirrhosis.pt Cirrhosistest.csv```
+```python predict.py dataset.pt testdata.csv```
 
 This will return a prediction based on the trained model used. MegaD provides a set of pretrained models for quick analysis of several datasets. 
 
@@ -100,3 +118,33 @@ This parameter sets the learning rate to be used during the training process.
 
 #### Epochs ####
 This parameter defines how many training cycles are completed dueing the training process.
+
+##End to end example
+
+For this example, we will demonstrate and example usage of our model using the purina dataset to obtain the best results possible. 
+
+###Training ###
+
+First, we will train the model on the Purina.csv dataset using the following command:
+```
+>python DNN.py ../Purina.csv ../wgs_purina_metadata.csv --threshold=0.03 --normalize=True --feature_level=Species --epochs=10
+```
+Alternatively, if we would like the best results possible we can utilize the grid search function, this will greatly increase the time it takes to train the model, but will produce better results. We can do that using the following command:
+```
+>python DNN.py ../Purina.csv ../wgs_purina_metadata.csv --threshold=0.03 --normalize=True --feature_level=Species --epochs=20 --gridsearch=True
+```
+
+This will generate the following:
+
+* An ROC curve that can be saved for future use
+* A prinout of training accuracy, validation accuracy, testing accuracy, and testing AUC in the console
+
+###Prediction ###
+In order to sample MegaD's ability to predict disease status from taxonomic profile, we will run the prediction using the same Purina.csv dataset.
+
+To predict, run the following command:
+```
+>python DNN.py ../Purina.csv ../wgs_purina_metadata.csv ../Purina.csv --threshold=0.03 --normalize=True --feature_level=Species --epochs=10 > prediction.txt
+```
+
+This will output the model's predictions to a file named prediction.txt for further analysis.
