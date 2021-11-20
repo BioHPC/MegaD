@@ -140,6 +140,7 @@ This will generate the following:
 * A prinout of training accuracy, validation accuracy, testing accuracy, and testing AUC in the console
 
 ###Prediction ###
+
 In order to sample MegaD's ability to predict disease status from taxonomic profile, we will run the prediction using the same Purina.csv dataset.
 
 To predict, run the following command:
