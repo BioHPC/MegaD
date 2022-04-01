@@ -34,12 +34,12 @@ Once these packages are installed, continue onto the next step to install our to
 
 Installing MegaD is simple. There are two options for installing our software tool. 
 
-####[1] Gitclone installation:
+#### [1] Gitclone installation:
 For this installation, simply clone this repository into your location of choice using the following command:
 ```
 >git clone https://github.com/BioHPC/MegaD.git
 ```
-####[2] Manual installation:
+#### [2] Manual installation:
 Download the .zip file from the github page in the top right, then extract the contents of the file into your directory of choice.
 
 ## Getting Started
