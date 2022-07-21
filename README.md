@@ -119,7 +119,7 @@ This parameter sets the learning rate to be used during the training process.
 #### Epochs ####
 This parameter defines how many training cycles are completed dueing the training process.
 
-##End to end example
+## End to end example
 
 For this example, we will demonstrate and example usage of our model using the purina dataset to obtain the best results possible. 
 
