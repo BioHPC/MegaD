@@ -23,11 +23,11 @@ The general workflow is described in below.
 Before using our tool, there are several python packages required. These can be installed using the following commands:
 ```
 >pip install torch==1.10.0+cu102 torchvision==0.11.1+cu102 torchaudio===0.10.0+cu102 -f https://download.pytorch.org/whl/cu102/torch_stable.html
->pip install sklearn
+>pip install scikit-learn
 >pip install tensorflow
 >pip install torchvision
 >pip install matplotlib
->pip install nump
+>pip install numpy
 >pip install pandas
 ```
 Once these packages are installed, continue onto the next step to install our tool.
