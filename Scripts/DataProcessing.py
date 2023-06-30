@@ -18,7 +18,7 @@ def process_data(dataset_path,metadata_path,level):
                 transposed = np.delete(transposed, remove_indeces, 1)
                                
         x_train=np.array(transposed[1:])        #Select columns as features
-        x_train = x_train.astype('Float64')
+        x_train = x_train.astype('float64')
         labels = pd.read_csv(metadata_path, sep=',', header=0)        #Import metadata file
         labels = labels.to_numpy()      #Convert pandas df to numpy for easier handling
         labels=labels.transpose()
