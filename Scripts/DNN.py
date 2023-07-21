@@ -117,15 +117,15 @@ def Train_model(dataset_path,metadata_path,GridSearch=False, Threshold = 0, Norm
                         for row in range(x_train.shape[0]):
                                 x,target=Variable(x_train[row]),Variable(y_train[row])
                                 output = model(x.unsqueeze(dim=0).float())
-                                train_pred.append(output.data.max(1,keepdim=True)[1])
+                                train_pred.append(output.data.max(1,keepdim=True)[1].item())
                         for row in range(x_val.shape[0]):
                                 x,target=Variable(x_val[row]),Variable(y_val[row])
                                 output = model(x.unsqueeze(dim=0).float())
-                                val_pred.append(output.data.max(1,keepdim=True)[1])
+                                val_pred.append(output.data.max(1,keepdim=True)[1].item())
                         for row in range(x_test.shape[0]):
                                 x,target=Variable(x_test[row]),Variable(y_test[row])
                                 output = model(x.unsqueeze(dim=0).float())
-                                test_pred.append(output.data.max(1,keepdim=True)[1])
+                                test_pred.append(output.data.max(1,keepdim=True)[1].item())
                         test_accuracy = sklearn.metrics.accuracy_score(y_test,test_pred) 
                         val_accuracy = sklearn.metrics.accuracy_score(y_val,val_pred)
                         train_accuracy = sklearn.metrics.accuracy_score(y_train,train_pred)
