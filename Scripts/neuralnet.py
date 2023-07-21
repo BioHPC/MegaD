@@ -32,7 +32,7 @@ class Net(nn.Module):
             x = x.view(-1,self.indim)
             for j,l in enumerate(self.layers):
                 x=F.elu(self.layers[j](x)+l(x))
-            x = F.softmax(self.output(x))
+            x = F.softmax(self.output(x), dim=1)
             #x = (self.output(x))
             scores[i]=x
         return scores
