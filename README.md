@@ -59,7 +59,9 @@ With Kraken2 installed, follow the instructions at https://github.com/DerrickWoo
 
 To train the model, navigate to the scripts folder in a command line environment, then run the following python script:
 
-```python DNN.py ../Data/dataset.csv ../Data/metadata.csv gridsearch=False threshold=0 normalize=False feature_level=All learning_rate=0.00001 epochs=10 batch=50 dropout_rate=0 early_stop=10```
+```
+python DNN.py ../Data/dataset.csv ../Data/metadata.csv --threshold=0.03 -lr=0.001 --normalize=True --feature_level=Species --epochs=20
+```
 
 This will generate a model using default parameters and using the selected training dataset. The model will be saved as dataset.pt for use with prediction.
 
