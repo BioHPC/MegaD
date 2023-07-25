@@ -62,6 +62,7 @@ To train the model, navigate to the scripts folder in a command line environment
 ```
 python DNN.py ../Data/dataset.csv ../Data/metadata.csv --threshold=0.03 -lr=0.001 --normalize=True --feature_level=Species --epochs=20
 ```
+![1gif](https://github.com/BioHPC/MegaD/blob/master/pictures/1gif.gif)
 
 This will generate a model using default parameters and using the selected training dataset. The model will be saved as dataset.pt for use with prediction.
 
