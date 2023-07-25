@@ -20,12 +20,13 @@ The general workflow is described in below.
 	* Use Kraken 2 http://ccb.jhu.edu/software/kraken2/ for taxonomic classification of sequences.
 
 ## Installing MegaD:
-Before using our tool, there are several python packages required. These can be installed using the following commands:
+Before using our tool, several Python packages are required. These can be installed using the following commands. In the process of installing PyTorch, please refer to the provided link and proceed with the installation that best suits your system configuration. Choose the installation option that corresponds to your hardware capabilities, specifically whether you are using CUDA or not, depending on the presence or absence of a GPU in your system:
+ - pytorch website: https://pytorch.org/get-started/locally/
+ - CUDA website: https://developer.nvidia.com/cuda-toolkit-archive
 ```
->pip install torch==1.10.0+cu102 torchvision==0.11.1+cu102 torchaudio===0.10.0+cu102 -f https://download.pytorch.org/whl/cu102/torch_stable.html
+>pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 >pip install scikit-learn
 >pip install tensorflow
->pip install torchvision
 >pip install matplotlib
 >pip install numpy
 >pip install pandas
