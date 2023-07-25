@@ -128,7 +128,7 @@ For this example, we will demonstrate and example usage of our model using the p
 
 First, we will train the model on the Purina.csv dataset using the following command:
 ```
->python DNN.py ../Purina.csv ../wgs_purina_metadata.csv --threshold=0.03 --normalize=True --feature_level=Species --epochs=10
+>python DNN.py ../Data/merged_abundance_table.csv ../Data/wgs_purina_metadata.csv --threshold=0.03 --normalize=True --feature_level=Species --epochs=20
 ```
 Alternatively, if we would like the best results possible we can utilize the grid search function, this will greatly increase the time it takes to train the model, but will produce better results. We can do that using the following command:
 ```
