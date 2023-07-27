@@ -42,6 +42,7 @@ For this installation, simply clone this repository into your location of choice
 ```
 >git clone https://github.com/BioHPC/MegaD.git
 ```
+![2gif](https://github.com/BioHPC/MegaD/blob/master/pictures/2gif.gif)
 #### [2] Manual installation:
 Download the .zip file from the github page in the top right, then extract the contents of the file into your directory of choice.
 
