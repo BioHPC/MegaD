@@ -152,7 +152,7 @@ In order to sample MegaD's ability to predict disease status from taxonomic prof
 
 To predict, run the following command:
 ```
->python DNN.py ../Purina.csv ../wgs_purina_metadata.csv ../Purina.csv --threshold=0.03 --normalize=True --feature_level=Species --epochs=10 > prediction.txt
+>python DNN.py ../Data/wgs_purina.csv ../Data/wgs_purina_metadata.csv ../Data/wgs_purina.csv --threshold=0.03 --normalize=True --feature_level=Species --epochs=10 > prediction.txt
 ```
 
 This will output the model's predictions to a file named prediction.txt for further analysis.
